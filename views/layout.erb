@@ -3,7 +3,7 @@
     <head>
       	<link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
-        <title>Night Owl</title>
+        <title>My App</title>
     </head>
     <body>
         <div class="container" id="main">
@@ -15,23 +15,25 @@
         </div>
       </div>
         <div class="row">
-           <div class="col-md-8">
-              <h2>Main Section</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lorem sem, volutpat et vulputate quis, tincidunt ut magna. Donec porttitor nibh ipsum, sed fermentum massa vestibulum quis. Etiam at lectus non dui pretium vestibulum in et enim. Nam pretium, erat id vulputate commodo, leo augue laoreet velit, at consequat arcu nisi ut lacus. Maecenas faucibus massa vel odio ultricies fermentum. In pellentesque porta maximus. Donec convallis dictum bibendum. Vestibulum neque dui, finibus ut aliquam eu, euismod et orci. Fusce volutpat mattis laoreet. Quisque sapien lacus, condimentum id vehicula at, faucibus congue erat. Phasellus tortor sem, tincidunt a eros ut, feugiat imperdiet nibh. Maecenas placerat lorem quis nunc cursus, nec varius sem euismod. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse placerat dolor nunc, in dignissim erat volutpat sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus in nulla at tellus tincidunt pellentesque.</p>
-
-                <p>Morbi ornare arcu sapien, ut porttitor mi facilisis id. Vestibulum rhoncus eu nulla ac varius. Nunc ornare dolor et quam ullamcorper, sed lacinia nulla aliquam. Sed  congue ante eget nunc convallis, et aliquet leo pulvinar. Nulla sit amet lacinia lacus. Praesent mollis libero id ante vestibulum suscipit. Nunc sagittis in mauris eu consequat. Integer libero mauris, blandit nec odio id, pretium bibendum est. Nulla pharetra enim ac ipsum lacinia, feugiat tempor sapien semper. Proin tincidunt urna quam, vitae pharetra nisl dignissim sed. Nullam dignissim, velit ac efficitur pharetra, elit eros iaculis leo, quis dapibus justo tellus vel orci. Praesent velit velit, ullamcorper et magna nec, placerat interdum mi. Praesent facilisis ante nec neque fermentum dictum. Aliquam quis ex fringilla, consectetur nisi eu, bibendum lorem. Aliquam gravida, mi quis egestas sollicitudin, lacus purus fermentum lectus, quis euismod elit velit ullamcorper nisi.</p>
-
-               <p>Maecenas eu diam ac lectus dignissim sodales. Vivamus in pellentesque urna. Aliquam urna purus, sollicitudin at nulla nec, egestas lacinia leo. Proin ullamcorper finibus urna. Quisque dolor tellus, dignissim ut ante lacinia, laoreet vehicula risus. Donec ante orci, scelerisque in fringilla ac, volutpat id diam. Quisque vitae ligula nulla. Sed a urna eu arcu rhoncus imperdiet ac eu ligula.
-              </p>
-              <img class="img-responsive" alt="A cool picture of the Cotton Bowl Game" src="img/panorama.jpg">
+           <div class="col-md-6">
+              <h2>Current Holidays</h2>
+                <% @holidayscurrent.each do |holiday| %>
+                  <ul>
+                    <% holiday.each do |x| %>
+                    <li><%= x['name'] %> : <%=x['date'] %></li>
+                    <% end %>
+                  </ul>
+              <% end %>
            </div>
-           <div class="col-md-4">
-              <h2>Secondary Section</h2>
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lorem sem, volutpat et vulputate quis, tincidunt ut magna. Donec porttitor nibh ipsum, sed fermentum massa vestibulum quis. Etiam at lectus non dui pretium vestibulum in et enim. Nam pretium, erat id vulputate commodo, leo augue laoreet velit, at consequat arcu nisi ut lacus. Maecenas faucibus massa vel odio ultricies fermentum. In pellentesque porta maximus. Donec convallis dictum bibendum. Vestibulum neque dui, finibus ut aliquam eu, euismod et orci. Fusce volutpat mattis laoreet. Quisque sapien lacus, condimentum id vehicula at, faucibus congue erat. Phasellus tortor sem, tincidunt a eros ut, feugiat imperdiet nibh. Maecenas placerat lorem quis nunc cursus, nec varius sem euismod. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse placerat dolor nunc, in dignissim erat volutpat sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus in nulla at tellus tincidunt pellentesque.
-               </p>
-
-                <p>Morbi ornare arcu sapien, ut porttitor mi facilisis id. Vestibulum rhoncus eu nulla ac varius. Nunc ornare dolor et quam ullamcorper, sed lacinia nulla aliquam. Sed congue ante eget nunc convallis, et aliquet leo pulvinar. Nulla sit amet lacinia lacus. Praesent mollis libero id ante vestibulum suscipit. Nunc sagittis in mauris eu consequat. Integer libero mauris, blandit nec odio id, pretium bibendum est. Nulla pharetra enim ac ipsum lacinia, feugiat tempor sapien semper. Proin tincidunt urna quam, vitae pharetra nisl dignissim sed. Nullam dignissim, velit ac efficitur pharetra, elit eros iaculis leo, quis dapibus justo tellus vel orci. Praesent velit velit, ullamcorper et magna nec, placerat interdum mi. Praesent facilisis ante nec neque fermentum dictum. Aliquam quis ex fringilla, consectetur nisi eu, bibendum lorem. Aliquam gravida, mi quis egestas sollicitudin, lacus purus fermentum lectus, quis euismod elit velit ullamcorper nisi.</p>
-                </p>
+           <div class="col-md-6">
+              <h2>Holidays From By Birth Month</h2>
+               <% @holidaysdob.each do |holiday| %>
+                  <ul>
+                    <% holiday.each do |x| %>
+                    <li><%= x['name'] %> : <%=x['date'] %></li>
+                    <% end %>
+                  </ul>
+              <% end %>
            </div>
         </div>
     </div>
