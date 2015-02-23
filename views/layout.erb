@@ -17,18 +17,10 @@
         <div class="row">
            <div class="col-md-6">
               <h2>Current Holidays</h2>
-                <% @holidayscurrent.each do |holiday| %>
+                <% @holidays.each do |holiday| %>
                   <ul>
-                    <% holiday.each do |x| %>
-                    <li><%= x['name'] %> : <%=x['date'] %></li>
-                    <% end %>
-                  </ul>
-              <% end %>
-              <h2>Searched Holidays</h2>
-              <% @holidaysdob.each do |holiday| %>
-                  <ul>
-                    <% holiday.each do |x| %>
-                    <li><%= x['name'] %> : <%=x['date'] %></li>
+                    <% holiday.each do |search| %>
+                    <li><%= search['name'] %> : <%=search['date'] %></li>
                     <% end %>
                   </ul>
               <% end %>
@@ -64,14 +56,6 @@
                 </div>
               </div>
             </form>
-              <!-- <h2>Holidays From By Birth Month</h2>
-               <% @holidaysdob.each do |holiday| %>
-                  <ul>
-                    <% holiday.each do |x| %>
-                    <li><%= x['name'] %> : <%=x['date'] %></li>
-                    <% end %>
-                  </ul>
-              <% end %> -->
            </div> 
         </div>
     </div>
