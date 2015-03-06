@@ -31,13 +31,13 @@
               <div class="form-group">
                 <label for="year" class="col-sm-2 control-label">Year</label>
                 <div class="col-sm-10">
-                  <input type="number" name="year" class="form-control" placeholder="Year" required>
+                  <input type="number" name="year" class="form-control" value="<%= params[:year] %>" placeholder="Year" required>
                 </div>
               </div>
               <div class="form-group">
                 <label for="month" class="col-sm-2 control-label">Month</label>
                 <div class="col-sm-10">
-                  <input type="number" name="month" class="form-control" placeholder="Month" required>
+                  <input type="number" name="month" class="form-control" value="<%= params[:month] %>" placeholder="Month" required>
                 </div>
               </div>
               <div class="form-group">
@@ -45,8 +45,8 @@
                 <div class="col-sm-10">
                   <select name="country" class="form-control" required>
                     <option value=""></option>
-                    <option value="US">United States</option>
-                    <option value="GB">Great Britain</option>
+                    <option value="US" <%= 'selected="selected"' if params[:country] == 'US' %>>United States</option>
+                    <option value="GB" <%= 'selected="selected"' if params[:country] == 'GB' %>>Great Britain</option>
                   </select>
                 </div>
               </div>
